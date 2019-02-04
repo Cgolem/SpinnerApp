@@ -2,8 +2,11 @@ package com.example.spinnerapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Spinner spinnerOpciones, spinnerXML;
@@ -28,5 +31,22 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adaptadorXML = ArrayAdapter.createFromResource(getApplicationContext(), R.array.valores_spinner, android.R.layout.simple_spinner_item);
 
         spinnerXML.setAdapter(adaptadorXML);
+
+        spinnerXML.setOnItemSelectedListener(evento);
     }
+
+    /**
+     * @description: Evento para generar interacción cuando se selecciona una opción
+     */
+    AdapterView.OnItemSelectedListener evento = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(getApplicationContext(), "Objeto seleccionado: " + parent.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+            //Podemos generar una interacción cuando no hay elementos seleccionados
+        }
+    };
 }
