@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SpinnerApp</string>
+
+    <!-- Textos -->
+    <string name="txt_title">Opciones de selección</string>
+    <string name="txt_title_xml">Opciones cargadas desde XML</string>
+</resources>

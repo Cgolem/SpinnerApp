@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valores_spinner">
+        <item>UNAM</item>
+        <item>UAM</item>
+        <item>IPN</item>
+        <item>ITAM</item>
+    </string-array>
+</resources>
